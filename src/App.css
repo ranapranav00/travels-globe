@@ -1,14 +1,90 @@
-.image-gallery {
-  width: 100%;
+/* Ensure the page does not scroll */
+html, body {
+  margin: 0;
+  padding: 0;
   height: 100%;
-  object-fit: cover; /* Ensures the image covers the area without distortion */
-  margin: 5px; /* Optional: Adds space around images */
-  margin-left: 20px;
+  overflow: hidden;
+  background-color: rgba(0,0,17,255);
 }
+
+/* Container for both globe and image gallery */
+.container {
+  display: flex;
+  height: 100vh;
+  
+}
+
+/* Globe container on the left */
+.globe-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-25%);
+  position: absolute;
+}
+
+/* Image gallery on the right, with adjusted size */
+.image-container {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0,0,17,255);
+  box-sizing: border-box;
+  overflow: scroll;
+  margin-right: 10px;
+}
+
+/* .image-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+  width: calc(100);
+  max-height: calc(100%-40px);
+  flex-direction: column;
+  align-items: top;
+  vertical-align: top;
+  overflow-y: auto;
+  max-height: 100%;
+} */
+
 
 .gallery-image {
-  width: 600px;
-  height: 400px;
-  padding: 10px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+
+  border-color: lightblue;
+  
 }
 
+.header {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 30px;
+  text-align: center;
+  height: 10px;
+}
+
+.header-container {
+  margin-bottom: 20px;
+}
+
+.Masonrydiv {
+  width: calc(100% - 40px);
+  height: 100%;
+  overflow-x: none;
+
+  padding-left: 20px;
+}
+
+.image-container::-webkit-scrollbar {
+  display: none;
+}
